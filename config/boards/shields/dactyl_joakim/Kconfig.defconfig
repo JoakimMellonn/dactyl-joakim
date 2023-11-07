@@ -1,0 +1,30 @@
+if SHIELD_DACTYL_JOAKIM
+
+config ZMK_KEYBOARD_NAME
+  default "Dactyl Joakim"
+
+endif
+
+if SHIELD_DACTYL_JOAKIM_LEFT
+
+    config ZMK_KEYBOARD_NAME
+        default "DACTYL-JOAKIM-L"
+
+    config ZMK_SPLIT_BLE_ROLE_CENTRAL
+        default y
+
+endif
+
+if SHIELD_DACTYL_JOAKIM_RIGHT
+
+    config ZMK_KEYBOARD_NAME
+        default "DACTYL-JOAKIM-R"
+
+endif
+
+if SHIELD_DACTYL_JOAKIM_LEFT || SHIELD_DACTYL_JOAKIM_RIGHT
+
+    config ZMK_SPLIT
+        default y
+
+endif
