@@ -1,6 +1,6 @@
 if SHIELD_DACTYL_JOAKIM_LEFT
 
-    config SHIELD_DACTYL_JOAKIM_LEFT
+    config ZMK_KEYBOARD_NAME
         default "DACTYL-JOAKIM-L"
 
     config ZMK_SPLIT_BLE_ROLE_CENTRAL
@@ -10,7 +10,7 @@ endif
 
 if SHIELD_DACTYL_JOAKIM_RIGHT
 
-    config SHIELD_DACTYL_JOAKIM_RIGHT
+    config ZMK_KEYBOARD_NAME
         default "DACTYL-JOAKIM-R"
 
 endif
