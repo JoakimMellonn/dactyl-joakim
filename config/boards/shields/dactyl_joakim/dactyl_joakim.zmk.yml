@@ -1,0 +1,12 @@
+file_format: "1"
+id: dactyl_joakim
+name: Dactyl Joakim
+type: shield
+url: https://github.com/JoakimMellonn/dactyl-joakim/
+requires:
+  - pro_micro
+features:
+  - keys
+siblings:
+  - dactyl_joakim_left
+  - dactyl_joakim_right
