@@ -1,5 +1,5 @@
 config SHIELD_DACTYL_JOAKIM_LEFT
-  def_bool $(shields_list_contains, dactyl_joakim_left)
+  def_bool $(shields_list_contains,dactyl_joakim_left)
 
 config SHIELD_DACTYL_JOAKIM_RIGHT
-  def_bool $(shields_list_contains, dactyl_joakim_right)
+  def_bool $(shields_list_contains,dactyl_joakim_right)
