@@ -6,32 +6,43 @@
 #define LWR 1
 
 / {
+    behaviors {
+        caps_shift: caps_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CAPS_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <75>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp NON_US_BACKSLASH  &kp N1  &kp N2    &kp N3  &kp N4          &kp N5                                                 &kp N6         &kp N7     &kp N8     &kp N9     &kp N0    &kp MINUS
-&kp ESCAPE            &kp Q   &kp W     &kp E   &kp R           &kp T                                                  &kp Y          &kp U      &kp I      &kp O      &kp P     &kp LEFT_BRACKET
-&kp TAB               &kp A   &kp S     &kp D   &kp F           &kp G                                                  &kp H          &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
-&kp GRAVE             &kp Z   &kp X     &kp C   &kp V           &kp B                                                  &kp N          &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp BACKSLASH
-                              &kp DOWN  &kp UP                                                                                                   &kp LEFT   &kp RIGHT
-                                                &kp LEFT_SHIFT  &kp SPACE                                              &kp SPACE      &kp ENTER
-                                                                &kp LEFT_COMMAND  &mo 1             &mo 1              &kp BACKSPACE
-                                                                &kp LEFT_ALT      &kp LEFT_CONTROL  &kp RIGHT_CONTROL  &kp RIGHT_ALT
+&kp NON_US_BACKSLASH  &kp N1  &kp N2    &kp N3  &kp N4                           &kp N5                                                 &kp N6         &kp N7     &kp N8     &kp N9     &kp N0    &kp MINUS
+&kp ESCAPE            &kp Q   &kp W     &kp E   &kp R                            &kp T                                                  &kp Y          &kp U      &kp I      &kp O      &kp P     &kp LEFT_BRACKET
+&kp TAB               &kp A   &kp S     &kp D   &kp F                            &kp G                                                  &kp H          &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
+&kp GRAVE             &kp Z   &kp X     &kp C   &kp V                            &kp B                                                  &kp N          &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp BACKSLASH
+                              &kp DOWN  &kp UP                                                                                                                    &kp LEFT   &kp RIGHT
+                                                &caps_shift LEFT_SHIFT CAPSLOCK  &kp SPACE                                              &kp SPACE      &kp ENTER
+                                                                                 &kp LEFT_COMMAND  &mo 1             &mo 1              &kp BACKSPACE
+                                                                                 &kp LEFT_ALT      &kp LEFT_CONTROL  &kp RIGHT_CONTROL  &kp RIGHT_ALT
             >;
         };
 
         lower_layer {
             bindings = <
-&kp F1      &kp F2        &kp F3          &kp F4          &kp F5         &kp F6                          &kp F7      &kp F8         &kp F9     &kp F10        &kp F11  &kp F12
-&trans      &trans        &kp LS(N8)      &kp LS(N9)      &kp LS(SLASH)  &kp LS(PERIOD)                  &trans      &kp LS(COMMA)  &kp GRAVE  &kp LS(GRAVE)  &trans   &trans
-&sys_reset  &kp LA(N8)    &kp LA(LS(N8))  &kp LA(LS(N9))  &kp LA(N9)     &kp LS(COMMA)                   &kp LEFT    &kp DOWN       &kp UP     &kp RIGHT      &trans   &trans
-&bt BT_CLR  &bt BT_SEL 0  &trans          &trans          &trans         &trans                          &trans      &trans         &trans     &trans         &trans   &trans
-                          &bt BT_SEL 1    &bt BT_SEL 2                                                                              &trans     &trans
-                                                          &trans         &trans                          &trans      &trans
-                                                                         &trans          &trans  &mo 2   &kp DELETE
-                                                                         &trans          &trans  &trans  &trans
+&kp F1      &kp F2        &kp F3          &kp F4          &kp F5         &kp F6                             &kp F7         &kp F8         &kp F9     &kp F10        &kp F11  &kp F12
+&trans      &trans        &kp LS(N8)      &kp LS(N9)      &kp LS(SLASH)  &kp LS(PERIOD)                     &kp LS(EQUAL)  &kp LS(COMMA)  &kp GRAVE  &kp LS(GRAVE)  &trans   &trans
+&sys_reset  &kp LA(N8)    &kp LA(LS(N8))  &kp LA(LS(N9))  &kp LA(N9)     &kp LS(COMMA)                      &kp LEFT       &kp DOWN       &kp UP     &kp RIGHT      &trans   &trans
+&bt BT_CLR  &bt BT_SEL 0  &trans          &trans          &trans         &trans                             &trans         &trans         &trans     &trans         &trans   &trans
+                          &bt BT_SEL 1    &bt BT_SEL 2                                                                                    &trans     &trans
+                                                          &trans         &trans                             &trans         &trans
+                                                                         &trans          &trans  &kp GLOBE  &kp DELETE
+                                                                         &trans          &trans  &trans     &trans
             >;
         };
 
